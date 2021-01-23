@@ -4,7 +4,7 @@ import fetch from 'node-fetch';
 
 const app = Express();
 
-const port = 8080;
+let port = process.env.PORT || 3000;
 
 
 app.get("/api/rates", (req, res) => {
@@ -63,7 +63,7 @@ app.get("/api/rates", (req, res) => {
 })
 
 
-app.listen(port)
+app.listen(port, () => console.log(`Running on port ${port}`))
 
 
 
